@@ -1,14 +1,29 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Misinfo Guardian</title>
   <link rel="stylesheet" href="popup.css" />
 </head>
+
 <body>
   <div class="container">
     <h2>Misinfo Guardian</h2>
+
+    <!-- Extension On/Off Toggle Switch -->
+    <div class="field toggle-field">
+      <div class="toggle-label">Extension Status</div>
+      <label class="toggle-switch">
+        <input type="checkbox" id="extension_toggle" checked />
+        <span class="toggle-slider"></span>
+        <span class="toggle-text">
+          <span class="on-text">ON</span>
+          <span class="off-text">OFF</span>
+        </span>
+      </label>
+    </div>
 
     <label class="field">
       <input type="checkbox" id="dark_mode" />
@@ -38,7 +53,8 @@
       <label><input type="checkbox" data-cat="violence" /><span class="checkmark"></span> Violence</label>
       <label><input type="checkbox" data-cat="sexual" /><span class="checkmark"></span> Sexual</label>
       <label><input type="checkbox" data-cat="politics" /><span class="checkmark"></span> Politics</label>
-      <label><input type="checkbox" data-cat="family-restricted" /><span class="checkmark"></span> Family Restricted</label>
+      <label><input type="checkbox" data-cat="family-restricted" /><span class="checkmark"></span> Family
+        Restricted</label>
     </div>
 
     <div class="actions">
@@ -46,8 +62,18 @@
       <button id="clearCacheBtn">Clear Cache</button>
     </div>
 
-    <small class="note">Tip: For demo, you don't need an API token — local keyword fallback will run. Add HF token for better classification.</small>
+    <small class="note">Tip: For demo, you don't need an API token — local keyword fallback will run. Add HF token for
+      better classification.</small>
   </div>
+
+  <!-- PIN Modal -->
+  <div id="pin_modal" class="modal">
+    <div class="modal-content">
+      <!-- Content will be dynamically generated -->
+    </div>
+  </div>
+
   <script src="popup.js"></script>
 </body>
+
 </html>
